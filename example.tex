@@ -1,0 +1,303 @@
+\documentclass{antiquebook}
+\SetOrnamentFont{CenturymodernTT-Regular.otf}
+
+\usepackage{lipsum}
+\usepackage[math]{blindtext}
+
+\author{Vojtěch Kuchař}
+\title{{Intuition \& Rigor}}
+
+%\input{glossary.tex}
+
+\begin{document}
+	\frontmatter
+	\maketitle
+	\tableofcontents
+	\mainmatter
+	\pagestyle{fancy}
+
+\chapter*{The scaffolding we burn building the truth.}
+\phantomsection
+\addcontentsline{toc}{chapter}{\protect\numberline{}The scaffolding we burn building the truth}
+Textbooks present a sanitized history: neat derivations that end at the theorem. They rarely show how the question itself was born. Physics is not a tidy march from hypothesis to proof; it’s a workshop of approximations and educated guesses. Rigor arrives later, not as the opposite of intuition, rather as its adjudicator. This book reconstructs the missing half of your training. It will not replace formal theory; it will teach you how to frame problems, diagnose which tools matter, and build the temporary scaffolding that leads to insight. Once the answer stands, you can formalize it and then burn the scaffolding. This book is the ash.\par\vspace{1em}
+{\hfill\raggedright \itshape Vojtěch Kuchař}
+% =========================================================
+% CHAPTER 1: IMMUTABLE
+% Theme: The Static World.
+% Focus: Things that are true before equations evolve.
+% Vibe: "The universe doesn't care about your coordinate system."
+% =========================================================
+\newpage\chapter{Immutable}
+\begin{center}
+    \vspace{-2em}
+{\itshape Constraints precede dynamics.}
+\end{center}
+\vspace{2em}
+Physics does not care about your coordinate system. Before you write down a single equation, you must ask: what stays the same when I change how I look?
+
+Galileo noticed this first. Experiments on a moving ship behave as if the ship were still. Noether made it rigorous: every symmetry hides a conservation law. Dynamics is not the starting point, it is the consequence.
+
+This chapter is about the constraints that exist before anything moves. You will not solve problems by summing forces; you will solve them by finding the transformation under which the system cannot tell the difference.\vspace{1em}
+
+\textbf{The Method of Scales.}\\ No characteristic length means no preferred ruler. The answer must be a power law.
+
+\textbf{The Method of Mirrors.}\\ A plane of symmetry cuts your work in half. One side determines the other.
+
+\textbf{The Method of Frames.}\\ There is no absolute observer. Jump to the frame where the motion simplifies, where velocity or acceleration vanishes.
+
+\textbf{The Method of Gauges.}\\ Potentials are fictions. Add whatever terms you like to them, as long as the physics stays unchanged. Use that freedom to decouple your equations.
+
+\textbf{The Method of Maps.}\\ A spring is a capacitor. A mass is an inductor. If you have solved one problem, you have solved every problem with the same structure.
+
+\textbf{The Method of Duals.}\\ Sometimes strong coupling is weak coupling in disguise. Invert the parameter, and the intractable becomes trivial.\par
+\vspace{1em}
+The goal is always the same: turn differential equations into algebra.
+
+    % WRITING TIP: Focus on Unit Analysis and Limits.
+    % The Trap: Trying to solve the differential equation immediately.
+    % The Insight: If the units don't match, the math is wrong.
+    % Key Problem: The Trinity Test (Nuclear Blast).
+    \section{The Method of Scales}
+    
+    \begin{problem}
+        \textit{In 1945, the physicist G.I. Taylor sought to determine the energy yield of the first atomic explosion. The data available to him was sparse: a series of photographs showing the radius of the fireball $R$ expanding over time $t$, and the knowledge of the ambient air density $\rho$.}
+    \end{problem}
+    \begin{solution}
+        In violent events like this, the physics is fully governed by the event itself. Initial conditions do not play a role, the explosion must be guided solely by the parameters of the fireball. Let us seek a relationship of the form
+        \begin{equation}
+            R = f(E, \rho, t).
+        \end{equation}
+        Assuming
+        \begin{equation}
+            R \propto E^a \rho^b t^c,
+        \end{equation}
+        dimensional analysis yields
+        \begin{equation}
+            L = {(M L^2 T^{-2})}^a {(M L^{-3})}^b (T)^c \implies \begin{aligned}
+                &a + b = 0,\\
+                -&2a + c = 0,\\
+                &2a - 3b = 1,
+            \end{aligned}
+        \end{equation}
+        which implies
+        \begin{equation}
+            R = C \left( \frac{E t^2}{\rho}\right)^{1/5},
+        \end{equation}
+        where \(C\) is an unknown constant of proportionality. Dimensionless constants are usually geometry-related, rarely being more than one order away from unity. Given the scaling of \(1/5\), it is safest to assume \(C \approx 1\). This leads to
+        \begin{equation}
+            R = {\left( \frac{E t^2}{\rho}\right)}^{1/5}.
+        \end{equation}
+    \end{solution}
+    \begin{note}
+        The reason why dimensional analysis leads us to the goal here is the violence of the blast itself.
+    \end{note}
+    \begin{proof}[Proof \textit{(after L. I. Sedov., G.I. Taylor, and J. von Neumann)}.]\small
+        We model the medium as an ideal polytropic gas with adiabatic index $\gamma$. The motion is governed by the system of Euler equations for the conservation of mass, momentum, and entropy in spherical coordinates.\dots
+\end{proof}
+    % WRITING TIP: Focus on Noether's Theorem and Zeroes.
+    % The Trap: Calculating vector forces that cancel out later.
+    % The Insight: Find the axis where the derivative is zero.
+    % Key Problem: The Infinite Resistor Grid.
+    \section{The Method of Mirrors}
+    
+    % WRITING TIP: Focus on Coordinate Transforms (Relativity/Rotation).
+    % The Trap: Staying in the "Lab Frame" because it feels safe.
+    % The Insight: There is no "still." Jump to the frame where E=0 or B=0.
+    % Key Problem: The Relativistic Rocket / Foucault Pendulum.
+    \section{The Method of Frames}
+    
+    % WRITING TIP: Focus on Redundancy and Potentials.
+    % The Trap: Thinking voltage is "real."
+    % The Insight: Add a ghost term to simplify the math, delete it at the end.
+    % Key Problem: Aharonov-Bohm / Coulomb Gauge.
+    \section{The Method of Gauges}
+    
+    % WRITING TIP: Focus on Isomorphisms (Structural Analogies).
+    % The Trap: Re-inventing the wheel for acoustics/circuits.
+    % The Insight: A spring is a capacitor; a mass is an inductor.
+    % Key Problem: The Acoustic Horn (Impedance Matching).
+    \section{The Method of Maps}
+    
+    % WRITING TIP: Focus on Inversion (T -> 1/T).
+    % The Trap: Perturbation theory at strong coupling.
+    % The Insight: A hard problem is usually an easy problem inverted.
+    % Key Problem: Kramers-Wannier Duality (Ising Model).
+    \section{The Method of Duals}
+
+
+% =========================================================
+% CHAPTER 2: INEVITABLE
+% Theme: The Dynamic World.
+% Focus: Optimization and Evolution.
+% Vibe: "Nature is lazy. Light takes the shortcut."
+% =========================================================
+\chapter{Inevitable}
+
+    % WRITING TIP: Focus on Least Action and Lagrangians.
+    % The Trap: Using F=ma vectors (Newtonian).
+    % The Insight: Nature minimizes a functional (Action).
+    % Key Problem: The Highway Mirage (Fermat's Principle).
+    \section{The Method of Paths}
+    
+    % WRITING TIP: Focus on Variational Calculus / Trial Functions.
+    % The Trap: Thinking you need the *exact* function.
+    % The Insight: You just need the *shape* (Gaussian vs Exponential).
+    % Key Problem: The Helium Atom Ground State.
+    \section{The Method of Trials}
+    
+    % WRITING TIP: Focus on Flux, Continuity, and Gauss's Law.
+    % The Trap: Tracking individual particles.
+    % The Insight: Stuff flows. Follow the density.
+    % Key Problem: The Traffic Jam / The Falling Chain.
+    \section{The Method of Flows}
+    
+    % WRITING TIP: Focus on Feedback, Stability, and Chaos.
+    % The Trap: Assuming linearity A -> B.
+    % The Insight: A -> B -> A. The output feeds the input.
+    % Key Problem: The Tacoma Narrows Bridge / Population Dynamics.
+    \section{The Method of Loops}
+    
+    % WRITING TIP: Focus on Singularities and Caustics.
+    % The Trap: Fearing the divide-by-zero.
+    % The Insight: The singularity is where the structure is most visible.
+    % Key Problem: The Rainbow / The Sonic Boom.
+    \section{The Method of Catastrophes}
+    
+    % WRITING TIP: Focus on Path Integrals (Sum over Histories).
+    % The Trap: " The particle is here."
+    % The Insight: "The particle is everywhere." (Quantum Action).
+    % Key Problem: The False Vacuum Collapse (Tunneling).
+    \section{The Method of Histories}
+
+
+% =========================================================
+% CHAPTER 3: GEOMETRIC
+% Theme: The Structured World.
+% Focus: The shape of the math itself.
+% Vibe: "You can't untie the knot locally."
+% =========================================================
+\chapter{Geometric}
+
+    % WRITING TIP: Focus on Discretization and Band Theory.
+    % The Trap: Treating solids as continuous jelly.
+    % The Insight: Periodicity creates forbidden zones (Band Gaps).
+    % Key Problem: The Loaded String.
+    \section{The Method of Lattices}
+    
+    % WRITING TIP: Focus on Eigenvalues and Normal Modes.
+    % The Trap: Coupled differential equations.
+    % The Insight: Diagonalize the matrix. Everything shakes independently.
+    % Key Problem: Coupled Pendulums / Google PageRank.
+    \section{The Method of Modes}
+    
+    % WRITING TIP: Focus on Complex Analysis and Interference.
+    % The Trap: Using cosines and sines (Trigonometry).
+    % The Insight: Use e^(ix). Add the arrows.
+    % Key Problem: The Poisson Spot.
+    \section{The Method of Phases}
+    
+    % WRITING TIP: Focus on Boundary Conditions and Images.
+    % The Trap: Integrating over a complex surface.
+    % The Insight: Place a mirror charge in the 'ghost' world.
+    % Key Problem: The Lightning Rod.
+    \section{The Method of Ghosts}
+    
+    % WRITING TIP: Focus on Topology and Winding Numbers.
+    % The Trap: Local geometry.
+    % The Insight: Global invariants (holes, twists).
+    % Key Problem: The Falling Cat / The Quantum Hall Effect.
+    \section{The Method of Knots}
+
+
+% =========================================================
+% CHAPTER 4: EMERGENT
+% Theme: The Statistical World.
+% Focus: Loss of detail, birth of new laws.
+% Vibe: "More is different."
+% =========================================================
+\chapter{Emergent}
+
+    % WRITING TIP: Focus on Time-Averaging and Adiabaticity.
+    % The Trap: Tracking the fast vibration.
+    % The Insight: If it's fast, it's just a blurry potential.
+    % Key Problem: The Kapitza Pendulum (Vibrating Pivot).
+    \section{The Method of Blurs}
+    
+    % WRITING TIP: Focus on Entropy and Central Limit Theorem.
+    % The Trap: Determinism.
+    % The Insight: Distributions are predictable even if individuals aren't.
+    % Key Problem: The Drunkard's Walk.
+    \section{The Method of Crowds}
+    
+    % WRITING TIP: Focus on Fluctuation-Dissipation.
+    % The Trap: Treating friction as a constant constant.
+    % The Insight: If it drags, it must also shake (Noise).
+    % Key Problem: Johnson Noise / Brownian Motion.
+    \section{The Method of Noise}
+    
+    % WRITING TIP: Focus on Renormalization (RG) and Scale.
+    % The Trap: Infinite integrals.
+    % The Insight: Physics depends on the resolution of your camera.
+    % Key Problem: Percolation / Phase Transitions.
+    \section{The Method of Grains}
+    
+    % WRITING TIP: Focus on Quasiparticles and Ground States.
+    % The Trap: The vacuum is empty.
+    % The Insight: The vacuum is a medium; particles are just waves in it.
+    % Key Problem: The Higgs Mechanism / Phonons.
+    \section{The Method of Vacuua}
+
+
+% =========================================================
+% CHAPTER 5: HOLOGRAPHIC
+% Theme: The Informational World.
+% Focus: Reality as Data.
+% Vibe: "The boundary tells you everything about the bulk."
+% =========================================================
+\chapter{Holographic}
+
+    % WRITING TIP: Focus on Causality and Response Functions.
+    % The Trap: Knowing the Hamiltonian.
+    % The Insight: Poking the black box (Green's Functions).
+    % Key Problem: The Badly Tuned Radio / Kramers-Kronig.
+    \section{The Method of Shadows}
+    
+    % WRITING TIP: Focus on Thermodynamics as Information.
+    % The Trap: Entropy is "Disorder".
+    % The Insight: Entropy is "Hidden Bits". Landauer's Limit.
+    % Key Problem: Maxwell's Demon / Szilard Engine.
+    \section{The Method of Demons}
+    
+    % WRITING TIP: Focus on Entanglement and Error Correction.
+    % The Trap: Local realism.
+    % The Insight: Spacetime is a hard drive protecting data.
+    % Key Problem: The Toric Code / Teleportation.
+    \section{The Method of Codes}
+    
+    % WRITING TIP: Focus on Area Laws and AdS/CFT.
+    % The Trap: Volume scales with Volume.
+    % The Insight: The universe is a projection from the edge.
+    % Key Problem: Black Hole Entropy.
+    \section{The Method of Holograms}
+    
+    % WRITING TIP: Focus on Unitarity and S-Matrices.
+    % The Trap: Feynman Diagrams (Lagrangians).
+    % The Insight: The answer is constrained by probability (Sum = 1).
+    % Key Problem: Why Gravity is Weak / Scattering Amplitudes.
+    \section{The Method of Amplitudes}
+
+\chapter*{What remains}
+\phantomsection
+\addcontentsline{toc}{chapter}{\protect\numberline{}What remains.}
+
+% =========================================================
+
+	\textbf{Some bold text.}
+		\begin{align*}
+			\parenthesis{\squarebracket{\floor{\dfrac{x}{n}}}}
+				& \leq \curlybrace{\ceiling{\dfrac{x}{n}}}\\
+			\prod_{p\leq x}p
+				& \leq\sqrt[4]{avbc}
+		\end{align*}
+	$a,b,c,\alpha,\beta,\gamma,\phi,\varphi,\psi,\Psi,\rho,\partial$. \textsc{This is SmallCaps text}
+\end{document}
