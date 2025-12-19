@@ -3,7 +3,7 @@
 \LoadClass[12pt]{book}
 
 \usepackage{amsmath,amssymb,amsthm,etoolbox}
-\usepackage[left=.5in,right=.5in,top=0.4in,]{geometry}
+\usepackage[left=.5in,right=.5in,top=0.8in,]{geometry}
 \usepackage{xcolor,color,fancyhdr,}
 \usepackage{changepage}
 \usepackage{tikz}
@@ -13,7 +13,7 @@
 \renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
 %\renewcommand{\chaptername}{CHAPTER}
-\renewcommand{\contentsname}{\parbox{\linewidth}{\centerline{\normalfont\LARGE OBSAH}~\\[-1.5cm]}}
+\renewcommand{\contentsname}{OBSAH}
 \renewcommand{\chaptername}{KAPITOLA}
 
 \renewcommand{\thesection}{$\S$\arabic{section}\hspace{.1em}.\hspace{.2em}}
@@ -67,6 +67,11 @@
 	\usepackage[T1]{fontenc}
 \else
 	\usepackage[]{unicode-math}
+	% Czech language support (dates, hyphenation, etc.)
+	\usepackage{polyglossia}
+	\setdefaultlanguage{czech}
+	% Czech quotation marks: use \enquote{text} for „text"
+	\usepackage[autostyle=true]{csquotes}
 	\newcommand{\fakestretch}{1.}
 	\newcommand{\scale}{1.1}
 
@@ -242,41 +247,21 @@
 	\extramarks{\thetheorem}{}\addtocounter{theorem}{-1}}
 
 \pagestyle{fancy}
-% Ensure header sits lower on the page and satisfy fancyhdr requirements
-% Header includes decorative TikZ; increase headheight to avoid warnings
-\setlength{\headheight}{44pt}
-\setlength{\headsep}{20pt}
+% Landau-Lifshitz style header
+\setlength{\headheight}{15pt}
+\setlength{\headsep}{12pt}
 \fancypagestyle{fancy}{
 \fancyhf{}
-% Replace the simple headrule with a decorative, retro-style rule:
-% two thin lines with an ornamental glyph centered between them.
-% Use \titlefont if available; otherwise fall back to small caps.
-\renewcommand{\headrulewidth}{0pt}% we draw the rule manually below
-	\renewcommand{\headrule}{%
-		\vskip-8pt
-		\nointerlineskip
-		\begin{tikzpicture}[x=1pt,y=1pt,yshift=1pt]
-			\coordinate (HW) at (\headwidth,0pt);
-			% Position ornament gap to the right of text (approx 40% of width)
-			\coordinate (C) at ($ (0pt,0pt)!0.65!(HW) $);
-			% ornament total width (approx) and gap from lines
-			% half-width + gap = 14pt (choose so lines do not touch ornament)
-			\def\linedist{10pt}
-	
-			% left short line (ends before ornament)
-			\draw[line width=0.6pt,color=black!80] (0pt,0pt) -- ($(C)+(-\linedist,0)$);
-			% right short line (starts after ornament)
-			\draw[line width=0.6pt,color=black!80] ($(C)+(\linedist,0)$) -- (HW);
-	
-			% centered ornament only
-			\node at (C) { {\color{black}\itshape{vk}} };
-		\end{tikzpicture}
-		\vskip4pt
-	}
-	\fancyhead[L]{\hspace*{0.5cm}\small\itshape \nouppercase\leftmark: \nouppercase\rightmark}
-	\fancyhead[CE]{}
-	\fancyhead[R]{\thepage}
-	\fancyhead[CO]{}% no center-odd header
+% Simple line separator
+\renewcommand{\headrulewidth}{0.4pt}
+% Even pages: page number left, section number right, title centered
+\fancyhead[LE]{\thepage}
+\fancyhead[RE]{\thesection}
+\fancyhead[CE]{\itshape\nouppercase{\rightmark}}
+% Odd pages: section number left, page number right, title centered
+\fancyhead[LO]{\thesection}
+\fancyhead[RO]{\thepage}
+\fancyhead[CO]{\itshape\nouppercase{\rightmark}}
 }
 
 \setcounter{secnumdepth}{3}
@@ -304,17 +289,20 @@
 	\renewcommand{\headrulewidth}{0pt}% no header rule
 }
 
-% Redefine \tableofcontents to use a larger font and the temporary pagestyle
+% Redefine \tableofcontents to use chapter* for consistent styling
+\makeatletter
 \AtBeginDocument{%
 	\let\oldtableofcontents\tableofcontents
 	\renewcommand{\tableofcontents}{%
 		\clearpage
 		\pagestyle{toc}% apply toc pagestyle for all ToC pages
-		\begingroup\vspace*{-3em}\oldtableofcontents\endgroup% make ToC text larger
+		\chapter*{\MakeUppercase{\contentsname}}% use chapter* for consistent title styling
+		\@starttoc{toc}% print the actual ToC entries
 		\clearpage
 		\pagestyle{fancy}% restore normal pagestyle
 	}%
 }
+\makeatother
 
 % Make ToC entry fonts a bit larger to match the larger ToC
 \renewcommand{\cftchapfont}{\normalsize}
