@@ -13,7 +13,8 @@
 \renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
 %\renewcommand{\chaptername}{CHAPTER}
-\renewcommand{\contentsname}{\parbox{\linewidth}{\centerline{\normalfont\LARGE CONTENTS}~\\[-1.5cm]}}
+\renewcommand{\contentsname}{\parbox{\linewidth}{\centerline{\normalfont\LARGE OBSAH}~\\[-1.5cm]}}
+\renewcommand{\chaptername}{KAPITOLA}
 
 \renewcommand{\thesection}{$\S$\arabic{section}\hspace{.1em}.\hspace{.2em}}
 %\addtolength{\cftchapnumwidth}{70pt}
@@ -202,8 +203,8 @@
 \makeindex
 \makeglossaries
 
-\titleformat{\chapter}[display]{\Huge}{\normalfont\large\centering\MakeUppercase\chaptername\hspace{.5em}\thechapter.}{1ex}{\centering\vspace{1ex}\ifthenelse{\value{chapter}>0}{\MakeUppercase}{}}[\vspace{1ex}]
-\titleformat{\section}[display]{\LARGE}{}{1ex}{\centering\ifthenelse{\value{section}>0}{\thesection\;}{}\vspace{.2in}}[]
+\titleformat{\chapter}[display]{\LARGE}{\normalfont\large\centering\MakeUppercase\chaptername\hspace{.5em}\thechapter.}{1ex}{\centering\vspace{1ex}\ifthenelse{\value{chapter}>0}{\MakeUppercase}{}}[\vspace{1ex}]
+\titleformat{\section}[display]{\LARGE}{}{1ex}{\raggedright\ifthenelse{\value{section}>0}{\thesection\;}{}\vspace{.2in}}[]
 %\titleformat{\subsection}[display]{\bfseries\scshape\Large}{}{1ex}{\centering\ifthenelse{\value{section}>0}{$\S\S$\thesubsection\;}{}}[\titlerule]
 
 \newtheorem{theorem}{\textbf{\textbf{Theorem}}}
@@ -229,9 +230,9 @@
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\SL}{SL}
 
-\renewcommand*{\chapterautorefname}{Chapter}
-\renewcommand*{\sectionautorefname}{Section}
-\renewcommand*{\subsectionautorefname}{Subsection}
+\renewcommand*{\chapterautorefname}{Kapitola}
+\renewcommand*{\sectionautorefname}{Sekce}
+\renewcommand*{\subsectionautorefname}{Podsekce}
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
