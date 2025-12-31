@@ -5,8 +5,8 @@
 \usepackage{amsmath,amssymb,amsthm,etoolbox}
 \usepackage[perpage,symbol]{footmisc}
 \usepackage{manyfoot}
-\DeclareNewFootnote{B}[alph]
-\newcommand{\transnote}[1]{\footnoteB{\textit{Translator's Note:} #1}}
+\DeclareNewFootnote{B}[arabic]
+\newcommand{\transnote}[1]{\footnoteB{#1 (pozn. překl.)}}
 \usepackage[left=.5in,right=.5in,top=0.8in,]{geometry}
 \usepackage{xcolor,color,fancyhdr,}
 \usepackage{changepage}
