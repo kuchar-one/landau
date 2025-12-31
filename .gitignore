@@ -16,6 +16,7 @@
 *.cb
 *.cb2
 .*.lb
+*.ist
 
 ## Intermediate documents:
 *.dvi
@@ -384,3 +385,4 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/latex,windows,linux,macos
 example.ist
+landau.ist

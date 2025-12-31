@@ -3,6 +3,7 @@
 \LoadClass[12pt]{book}
 
 \usepackage{amsmath,amssymb,amsthm,etoolbox}
+\usepackage[perpage,symbol]{footmisc}
 \usepackage[left=.5in,right=.5in,top=0.8in,]{geometry}
 \usepackage{xcolor,color,fancyhdr,}
 \usepackage{changepage}
@@ -346,3 +347,12 @@
 %\usepackage{graphicx}
 %\usepackage{eso-pic}
 %\AddToShipoutPictureBG{\includegraphics[width=\paperwidth,height=\paperheight]{background}}
+
+% Custom Footnote Style: Symbols, inline (not superscript), per page restart, start with dagger
+% Configured via footmisc package loaded earlier.
+\DefineFNsymbols{landau}{{\textdagger}{\textdaggerdbl}{\textsection}{\textparagraph}{\ensuremath{\|}}{**}{\textdagger\textdagger}{\textdaggerdbl\textdaggerdbl}}
+\setfnsymbol{landau}
+
+\makeatletter
+\def\@makefnmark{\hbox{\normalfont\@thefnmark}}
+\makeatother
