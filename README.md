@@ -14,7 +14,7 @@ Tento repozitář obsahuje probíhající český překlad série **Kurz teoreti
 |--------|-------|------|----------|
 | I | Mechanika | ❌ Nezahájeno | |
 | II | Teorie pole | ❌ Nezahájeno | |
-| III | Kvantová mechanika (nerelativistická teorie) | 🔄 Probíhá | §1 rozpracován |
+| III | Kvantová mechanika (nerelativistická teorie) | 🔄 Probíhá | §1 hotovo |
 | IV | Kvantová elektrodynamika | ❌ Nezahájeno | |
 | V | Statistická fyzika (část 1) | ❌ Nezahájeno | |
 | VI | Hydrodynamika | ❌ Nezahájeno | |
