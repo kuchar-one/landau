@@ -6,8 +6,8 @@
 \usepackage[perpage,symbol]{footmisc}
 \usepackage{manyfoot}
 \DeclareNewFootnote{B}[roman]
-\newcommand{\transnote}[1]{{\def\@makefnmark{\hbox{\textsuperscript{\normalfont\@thefnmark}}}\footnoteB{#1 (pozn. překl.)}}}
-\usepackage[left=.5in,right=.5in,top=0.8in,]{geometry}
+\newcommand{\transnote}[1]{{\def\@makefnmark{\hbox{\textsuperscript{\normalfont\@thefnmark}}}\footnoteB{#1 {\it(pozn. překl.)}}}}
+\usepackage[left=.7in,right=.7in,top=0.7in,bottom=0.7in]{geometry}
 \usepackage{xcolor,color,fancyhdr,}
 \usepackage{changepage}
 \usepackage{tikz}
@@ -212,9 +212,9 @@
 \makeindex
 \makeglossaries
 
-\titleformat{\chapter}[display]{\LARGE}{\normalfont\large\centering\MakeUppercase\chaptername\hspace{.5em}\thechapter.}{1ex}{\centering\vspace{1ex}\ifthenelse{\value{chapter}>0}{\MakeUppercase}{}}[\vspace{1ex}]
-\titleformat{\section}[display]{\LARGE}{}{1ex}{\raggedright\ifthenelse{\value{section}>0}{\thesection\;}{}\vspace{.2in}}[]
-%\titleformat{\subsection}[display]{\bfseries\scshape\Large}{}{1ex}{\centering\ifthenelse{\value{section}>0}{$\S\S$\thesubsection\;}{}}[\titlerule]
+\titleformat{\chapter}[display]{\LARGE}{\normalfont\large\centering\MakeUppercase\chaptername\hspace{.5em}\thechapter.}{1ex}{\centering\vspace{1ex}\ifthenelse{\value{chapter}>0}{\MakeUppercase}{}}[\vspace{-0.5in}]
+\titleformat{\section}[display]{\large\bfseries}{}{0ex}{\raggedright\ifthenelse{\value{section}>0}{\thesection\;}{}\vspace{0in}}[]
+\titleformat{\subsection}[display]{\bfseries\scshape\Large}{}{1ex}{\centering\ifthenelse{\value{section}>0}{$\S\S$\thesubsection\;}{}}[\titlerule]
 
 \newtheorem{theorem}{\textbf{\textbf{Theorem}}}
 %\numberwithin{theorem}{chapter}
@@ -261,7 +261,7 @@
 % Even pages: page number left, section number right, title centered
 \fancyhead[LE]{\thepage}
 \fancyhead[RE]{\thesection}
-\fancyhead[CE]{\itshape\nouppercase{\rightmark}}
+\fancyhead[CE]{\itshape\nouppercase{\leftmark}}
 % Odd pages: section number left, page number right, title centered
 \fancyhead[LO]{\thesection}
 \fancyhead[RO]{\thepage}
@@ -353,7 +353,7 @@
 
 % Custom Footnote Style: Symbols, inline (not superscript), per page restart, start with dagger
 % Configured via footmisc package loaded earlier.
-\DefineFNsymbols{landau}{{\textdagger}{\textdaggerdbl}{\textsection}{\textparagraph}{\ensuremath{\|}}{**}{\textdagger\textdagger}{\textdaggerdbl\textdaggerdbl}}
+\DefineFNsymbols{landau}{{\textdagger}{\textdaggerdbl}{\textsection}{\textparagraph}{\ensuremath{\|}}{**}{\textdagger\textdagger}{\textdaggerdbl\textdaggerdbl}{\textsection\textsection}{\textparagraph\textparagraph}}
 \setfnsymbol{landau}
 
 \makeatletter

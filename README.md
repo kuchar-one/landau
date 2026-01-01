@@ -14,7 +14,7 @@ Tento repozitář obsahuje probíhající český překlad série **Kurz teoreti
 |--------|-------|------|----------|
 | I | Mechanika | ❌ Nezahájeno | |
 | II | Teorie pole | ❌ Nezahájeno | |
-| III | Kvantová mechanika (nerelativistická teorie) | 🔄 Probíhá | §1 hotovo |
+| III | Kvantová mechanika (nerelativistická teorie) | 🔄 Probíhá | §1-§2 hotovo |
 | IV | Kvantová elektrodynamika | ❌ Nezahájeno | |
 | V | Statistická fyzika (část 1) | ❌ Nezahájeno | |
 | VI | Hydrodynamika | ❌ Nezahájeno | |
@@ -48,6 +48,7 @@ latexmk -lualatex landau.tex
 landau/
 ├── landau.tex          # Hlavní dokument
 ├── antiquebook.cls     # Vlastní třída dokumentu
+├── books/              # Zdrojové soubory jednotlivých svazků
 ├── *.otf               # Fonty
 └── README.md
 ```
@@ -56,7 +57,7 @@ landau/
 
 Toto dílo je licencováno pod **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International** (CC BY-NC-SA 4.0).
 
-Viz [LICENSE](LICENSE) pro úplný text licence.
+Viz [LICENSE](LICENSE) (anglicky) nebo [LICENSE_CS](LICENSE_CS) (česky) pro text licence.
 
 ## Přispívání
 
