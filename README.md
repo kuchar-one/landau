@@ -8,23 +8,6 @@
 
 Tento repozitář obsahuje probíhající český překlad série **Kurz teoretické fyziky** (Course of Theoretical Physics), která je považována za jednu z nejlepších a nejucelenějších sbírek učebnic teoretické fyziky. Původní dílo bylo napsáno v ruštině a následně přeloženo do mnoha jazyků.
 
-## Zdrojové materiály
-
-K překladu jsou využívány následující anglické verze učebnic:
-
-| Svazek | Titul | Vydání (Rok) |
-|---|---|---|
-| I | Mechanics | 3. vydání (1976) |
-| II | The Classical Theory of Fields | 4. vydání (1994) |
-| III | Quantum Mechanics - Non-relativistic Theory | 3. vydání (1991) |
-| IV | Quantum Electrodynamics | 2. vydání (1982) |
-| V | Statistical Physics, Part 1 | 3. vydání (1980) |
-| VI | Fluid Mechanics | 2. vydání (1987) |
-| VII | Theory of Elasticity | 2. vydání (1970) |
-| VIII | Electrodynamics of Continuous Media | 2. vydání (1984) |
-| IX | Statistical Physics, Part 2 | 2. vydání (1981) |
-| X | Physical Kinetics | 1. vydání (1981) |
-
 ## Postup překladu
 
 | Svazek | Název | Stav | Poznámky |
@@ -44,6 +27,25 @@ K překladu jsou využívány následující anglické verze učebnic:
 - ✅ Dokončeno
 - 🔄 Probíhá
 - ❌ Nezahájeno
+
+
+## Zdrojové materiály
+
+K překladu jsou využívány následující anglické verze učebnic:
+
+| Svazek | Titul | Vydání (Rok) |
+|---|---|---|
+| I | Mechanics | 3. vydání (1976) |
+| II | The Classical Theory of Fields | 4. vydání (1994) |
+| III | Quantum Mechanics - Non-relativistic Theory | 3. vydání (1991) |
+| IV | Quantum Electrodynamics | 2. vydání (1982) |
+| V | Statistical Physics, Part 1 | 3. vydání (1980) |
+| VI | Fluid Mechanics | 2. vydání (1987) |
+| VII | Theory of Elasticity | 2. vydání (1970) |
+| VIII | Electrodynamics of Continuous Media | 2. vydání (1984) |
+| IX | Statistical Physics, Part 2 | 2. vydání (1981) |
+| X | Physical Kinetics | 1. vydání (1981) |
+
 
 ## Kompilace
 
