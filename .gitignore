@@ -387,3 +387,4 @@ $RECYCLE.BIN/
 example.ist
 landau.ist
 .vscode/
+build/

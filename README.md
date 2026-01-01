@@ -30,11 +30,26 @@ Tento repozitář obsahuje probíhající český překlad série **Kurz teoreti
 
 ## Kompilace
 
-Projekt vyžaduje **LuaLaTeX** pro správné zobrazení fontů. Kompilace:
+### Doporučený způsob (`latexmk`)
+Nejsnazší způsob kompilace který využívá nastavení v `.latexmkrc` (vynucuje LuaLaTeX a ukládá dočasné soubory do `build/`):
 
 ```bash
-latexmk -lualatex landau.tex
+latexmk
 ```
+
+### Manuální kompilace (`lualatex`)
+Pokud preferujete manuální spouštění (dočasné soubory zůstanou v kořenovém adresáři):
+
+```bash
+lualatex landau.tex
+```
+
+### Poznámka k `pdflatex`
+Projekt je sice možné zkompilovat i pomocí `pdflatex`:
+```bash
+pdflatex landau.tex
+```
+Mějte však na paměti, že **nebudou použity správné fonty** defimované v `antiquebook.cls` a vzhled dokumentu nebude odpovídat zamýšlené podobě. Použití `pdflatex` slouží pouze jako "fallback" pro kontrolu textu.
 
 ### Požadavky
 
@@ -49,7 +64,8 @@ landau/
 ├── landau.tex          # Hlavní dokument
 ├── antiquebook.cls     # Vlastní třída dokumentu
 ├── books/              # Zdrojové soubory jednotlivých svazků
-├── *.otf               # Fonty
+├── fonts/              # Fonty (*.otf, *.ttf)
+├── build/              # Dočasné soubory a PDF sazba
 └── README.md
 ```
 

@@ -79,21 +79,21 @@
 	\newcommand{\fakestretch}{1.}
 	\newcommand{\scale}{1.1}
 
-	\setmainfont{CenturymodernTT-Regular.otf}[ItalicFont=CenturymodernTT-Italic.otf,BoldItalicFont=CenturymodernTT-Italic.otf,SmallCapsFont={CenturymodernTT-SC.otf},BoldFont=CenturymodernTT-Regular.otf,BoldFeatures={SmallCapsFeatures={FakeBold=2}, FakeBold=2},BoldItalicFeatures={FakeBold=2},Scale=\scale,FakeStretch=\fakestretch,]
-	\setsansfont{NewCMSans10-Book.otf}[,Scale=\scale,FakeStretch=\fakestretch]
-	\setmonofont{NewCMMono10-Book.otf}[,Scale=\scale,FakeStretch=\fakestretch]
-	\setmathfont{NewCMMath-Book-custom2.otf}[,Scale=\scale,FakeStretch=\fakestretch,]% texgyreschola-math.otf KpMath-Regular.otf,KpMath-Light.otf
+	\setmainfont{CenturymodernTT-Regular.otf}[Path=fonts/,ItalicFont=CenturymodernTT-Italic.otf,BoldItalicFont=CenturymodernTT-Italic.otf,SmallCapsFont={CenturymodernTT-SC.otf},BoldFont=CenturymodernTT-Regular.otf,BoldFeatures={SmallCapsFeatures={FakeBold=2}, FakeBold=2},BoldItalicFeatures={FakeBold=2},Scale=\scale,FakeStretch=\fakestretch,]
+	\setsansfont{NewCMSans10-Book.otf}[Scale=\scale,FakeStretch=\fakestretch]
+	\setmonofont{NewCMMono10-Book.otf}[Scale=\scale,FakeStretch=\fakestretch]
+	\setmathfont{NewCMMath-Book-custom2.otf}[Path=fonts/,Scale=\scale,FakeStretch=\fakestretch,]% texgyreschola-math.otf KpMath-Regular.otf,KpMath-Light.otf
 
-	\setmathfont{CenturymodernTT-Italic.otf}[range={it,"007D,frak,"2018-"2022,{up/Greek},{it/Greek},"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"211C,"2111},Scale=\scale,FakeStretch=\fakestretch,]
+	\setmathfont{CenturymodernTT-Italic.otf}[Path=fonts/,range={it,"007D,frak,"2018-"2022,{up/Greek},{it/Greek},"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"211C,"2111},Scale=\scale,FakeStretch=\fakestretch,]
 	%\setmathfont{CenturymodernTT-Regular.otf}[range={it/{num,"03BB},up/{num,"03BB},\mid,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]
-	\setmathfont{CenturymodernTT-Regular.otf}[range={it/{num,"03BB},up/{num,"03BB},"002D,"005E-"0060,"00A7,"03BB,"007B-"007D,"002F, "005F,"00A7,\mid,},Scale=\scale,FakeStretch=\fakestretch,]
-	\setmathfont{CenturymodernTT-Italic.otf}[range={frak,"221E,},Scale=\scale,FakeStretch=\fakestretch,]
-	\setmathfont{CenturymodernTT-Italic.otf}[range={bb,"2022,"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"2260,"22C4,"002F,"00B1,"0021,"002D},Scale=\scale,FakeStretch=\fakestretch,]
+	\setmathfont{CenturymodernTT-Regular.otf}[Path=fonts/,range={it/{num,"03BB},up/{num,"03BB},"002D,"005E-"0060,"00A7,"03BB,"007B-"007D,"002F, "005F,"00A7,\mid,},Scale=\scale,FakeStretch=\fakestretch,]
+	\setmathfont{CenturymodernTT-Italic.otf}[Path=fonts/,range={frak,"221E,},Scale=\scale,FakeStretch=\fakestretch,]
+	\setmathfont{CenturymodernTT-Italic.otf}[Path=fonts/,range={bb,"2022,"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"2260,"22C4,"002F,"00B1,"0021,"002D},Scale=\scale,FakeStretch=\fakestretch,]
 	%\setmathfont[range={{up/Greek},{it/Greek},} ,Scale=\scale,FakeStretch=1.05\fakestretch,FakeBold=\fakemathbold]{ModernMT-Extended-New.otf}
 	%\setmathfont{NewCMMath-Book-custom.otf}
 	%\setmathfont{CenturymodernTT-Italic.ttf}[range={},Scale=\scale,FakeBold=\fakemathbold,FakeStretch=\fakestretch]%,{it/{greek}},{up/{greek}},
 
-	\newfontfamily{\sumfont}{CenturymodernTT-Italic.otf}[]% GFSSolomos.otf,lmroman17-regular.otf,lmromanslant17-regular.otf,Theano Didot Regular V1.otf
+	\newfontfamily{\sumfont}{CenturymodernTT-Italic.otf}[Path=fonts/]% GFSSolomos.otf,lmroman17-regular.otf,lmromanslant17-regular.otf,Theano Didot Regular V1.otf
 	\makeatletter
 	\RenewDocumentCommand{\sum@}{}{\DOTSB\baskervillesum}
 	\AtBeginDocument{%
@@ -109,7 +109,7 @@
 	\NewDocumentCommand{\makebaskervillesum}{m}{%
 		\vcenter{\hbox{\scalebox{#1}{\sumfont Σ}}}%
 	}
-	\newfontfamily{\prodfont}{CenturymodernTT-Italic.otf}[FakeStretch=.9\fakestretch]%OldStandard-Italic.otf,ModernExtT-Theano.otf
+	\newfontfamily{\prodfont}{CenturymodernTT-Italic.otf}[Path=fonts/,FakeStretch=.9\fakestretch]%OldStandard-Italic.otf,ModernExtT-Theano.otf
 	\makeatletter
 	\RenewDocumentCommand{\prod@}{}{\DOTSB\baskervilleprod}
 	\AtBeginDocument{%
@@ -125,7 +125,7 @@
 	\NewDocumentCommand{\makebaskervilleprod}{m}{%
 		\vcenter{\hbox{\scalebox{#1}{\prodfont ∏}}}%
 	}
-	\newfontfamily\intfont{CenturymodernTT-Italic.otf}[FakeStretch=1.1]% OldStandard-Italic.otf,latinmodern-math.otf,Erewhon-Math.otf
+	\newfontfamily\intfont{CenturymodernTT-Italic.otf}[Path=fonts/,FakeStretch=1.1]% OldStandard-Italic.otf,latinmodern-math.otf,Erewhon-Math.otf
 	\makeatletter
 	\NewDocumentCommand{\int@}{}{\DOTSB\baskervilleint}
 	\AtBeginDocument{%
@@ -141,7 +141,7 @@
 	\NewDocumentCommand{\makebaskervilleint}{m}{%
 		\vcenter{\hbox{\scalebox{#1}{\intfont ∫}}}%
 	}
-	\newfontfamily\titlefont{CenturymodernTT-Regular.otf}[]
+	\newfontfamily\titlefont{CenturymodernTT-Regular.otf}[Path=fonts/]
 	\defaultfontfeatures{Mapping=tex-text}
 	\newcommand{\wb}[2]{\fontsize{#1}{#2}\usefont{U}{webo}{xl}{n}}
 	\newcommand{\wbc}[3]{\vspace*{#1}\begin{center}
