@@ -49,4 +49,50 @@ Pokud tyto dvě části neinteragují, bude tento vztah mezi vlnovými funkcemi 
     \psi_{12}(q_1,q_2,t) = \psi_1(q_1,t)\psi_2(q_2,t).
 \end{equation}
 \section{Operátory}
-Uvažujme některou fyzikální veličinu \(f\)
+Uvažujme některou fyzikální veličinu \(f\), jež popisuje stav kvantového systému. Striktně řečeno bychom neměli hovořit o jedné veličině, nýbrž o jejich úplné množině. Pro stručnost a jednoduchost však, s přihlédnutím k tomu, že tato skutečnost diskusi nikterak nemění, budeme níže pracovat s veličinou jedinou.\par
+Hodnoty, jichž může určitá veličina v kvantové mechanice nabývat, nazýváme \emph{vlastními hodnotami}, a množinu všech těchto hodnot pak \emph{spektrem vlastních hodnot} dané veličiny. V klasické mechanice obecně veličiny nabývají hodnot z některého spojitého intervalu. V kvantové mechanice taktéž jsou fyzikální veličiny (kupř. souřadnice), jejichž vlastní hodnoty náleží do spojitého intervalu; v těchto případech hovoříme o \emph{spojitém spektru} vlastních hodnot. Stejně tak ale v kvantové mechanice existují veličiny, jejichž vlastní hodnoty tvoří diskrétní množinu; v těchto případech hovoříme o \emph{diskrétním spektru}.\par
+Pro jednoduchost zde budeme předpokládat, že veličina \(f\) má spektrum diskrétní; případ spojitého spektra bude diskutován v §5. Vlastní hodnoty veličiny \(f\)  značíme \(f_n\), kde \(n\) nabývá hodnot \(0, 1, 2, 3, \dots\). Vlnovou funkci systému ve stavu, v němž nabývá veličina \(f\) hodnoty \(f_n\), značíme \(\psi_n\). Vlnové funkce \(\psi_n\) nazýváme \emph{vlastními funkcemi} veličiny \(f\). Pro každou z těchto předpokládáme normalisaci, to jest
+\begin{equation}
+    \int \abs{\psi_n}^2\,\d q = 1.
+\end{equation}
+Je-li systém v některém obecném stavu \(\psi\), měření veličiny \(f\) na něm provedené dá za výsledek jednu z vlastních hodnot \(f_n\). V souladu s principem superpozice tvrdíme, že vlnová funkce \(\psi\) musí být lineární kombinací vlastních funkcí veličiny \(\psi_n\) odpovídajících hodnotám \(f_n\), které lze obdržet s nenulovou pravděpodobností po provedení měření na systému v uvažovaném stavu. Tudíž, pro obecný stav, lze funkci \(\psi\) psát v podobě řady
+\begin{equation}\label{eq:expansion}
+    \psi = \sum a_n \psi_n,
+\end{equation}
+kde suma prochází všechna \(n\), a kde \(a_n\) jsou některé konstantní koeficienty.\par
+Docházíme tedy k závěru tomu, že vlnovou funkci lze, tak říkajíc, rozvinout do vlastních funkcí jakékoliv fyzikální veličiny. Množinu funkcí, v nichž takové rozvinutí lze provést, nazýváme \emph{úplnou} (nebo \emph{uzavřenou}) \emph{množinou}.\par
+Rozvinutí \eqref{eq:expansion} umožňuje zjistit pravděpodobnost nalezení (t. j. pravděpodobnost získání odpovídajícího výsledku měření), v systému ve stavu o vlnové funkci \(\psi\), jakékoliv hodnoty \(f_n\) veličiny \(f\). Neboť, jak bylo řečeno v sekci předcházející, musí být takovéto pravděpodobnosti určeny výrazy bilineárními v \(\psi\) a \(\psi^*\), musí být bilineární i v \(a_n\) a \(a_n^*\). Navíc také, samozřejmě, musejí být tyto hodnoty kladné. Konečně, pravděpodobnost hodnoty \(f_n\) musí býti jednotková je-li systém ve stavu o vlnové funkci \(\psi = \psi_n\), a nulová, neobsahuje-li rozvoj \eqref{eq:expansion} vlmové funkce \(\psi\) žádný člen obsahující \(\psi_n\). Prakticky jedinou kladnou veličinou, jež splňuje tyto podmínky, je čtverec modulu koeficientu \(a_n\). Docházíme tudíž k výsledku, že čtverec modulu \(\abs{a_n}^2\) každého koeficientu rozvoje \eqref{eq:expansion} udává pravděpodobnost, že měření veličiny \(f\) na systému ve stavu s vlnovou funkcí \(\psi\) poskytne výsledek \(f_n\). Suma pravděpodobností všech možných hodnot \(f_n\) musí býti rovna jedné; jinými slovy
+\begin{equation}\label{eq:norm}
+    \sum_n \abs{a_n}^2 = 1
+\end{equation}
+musí platit.\par
+Nebyla-li by funkce \(\psi\) normalizovaná, relace \eqref{eq:norm} by také neplatila. Suma \(\sum \abs{a_n}^2\) by poté byla dána nějakým výrazem bilineárním v \(\psi\) a \(\psi^*\), jež by přecházela v jednotku normalisací \(\psi\). Jedině integrál \(\int \psi\psi^*\) je takovýmto výrazem. Rovnice
+\begin{equation}\label{eq:34}
+    \sum_n a_n a_n^* = \int \psi \psi^*\, \d q
+\end{equation}
+musí tedy platit.\par
+Naopak, vynásobíme-li \(\psi\) rozvoj \(\psi^* = \sum a_n^* \psi_n^*\) funkce \(\psi^*\) (komplexního sdružení \(\psi\)) a provedeme-li integraci, získáme
+\begin{equation*}
+    \int \psi \psi^*\, \d q = \sum_n a_n^* \int \psi_n^* \psi\, \d q.
+\end{equation*}
+Srovnáním s \eqref{eq:34} máme
+\begin{equation*}
+    \sum_n a_n a_n^* = \sum_b a_n^* \int \psi_n^*\psi\,\d q,
+\end{equation*}
+z čehož můžeme odvodit následující výraz určující koeficienty \(a_n\) rozvoje funkce \(\psi\) do vlastních funkcí \(\psi_n\):
+\begin{equation}
+    a_n = \int \psi \psi_n^*\, \d q.
+\end{equation}\par
+Dosadíme-li zde z rovnice \eqref{eq:expansion}, získáváme
+\begin{equation}
+    a_n = \sum_m a_m \int \psi_m \psi_n^*\,\d q,
+\end{equation}
+kde je dále patrné, že vlastní funkce musí splňovat podmínky
+\begin{equation}
+    \int \psi_m \psi_n^*\,\d q = \delta_{mn},
+\end{equation}
+kde \(\delta_{nm} = 1\) pro \(n=m\) a \(\delta_{nm} = 0\) pro \(n \neq m\). Skutečnost, že integrály součinů \(\psi_m \psi_n^*\) pro \(m\neq n\) vymizí, nazýváme \emph{ortogonalitou} funkcí \(\psi_n\). Sada vlastních funkcí \(\psi_n\) tedy tvoří úplnou množinu normalisovaných a ortogonálních (nebo, stručněji, \emph{ortonormálních}) funkcí.\par
+
+
+
+

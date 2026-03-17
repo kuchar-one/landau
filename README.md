@@ -16,11 +16,11 @@ Tento repozitář obsahuje probíhající český překlad série **Kurz teoreti
 | II | Teorie pole | ❌ Nezahájeno | |
 | III | Kvantová mechanika (nerelativistická teorie) | 🔄 Probíhá | §1-§2 hotovo |
 | IV | Kvantová elektrodynamika | ❌ Nezahájeno | |
-| V | Statistická fyzika (část 1) | ❌ Nezahájeno | |
+| V | Statistická fysika (část 1) | ❌ Nezahájeno | |
 | VI | Hydrodynamika | ❌ Nezahájeno | |
 | VII | Teorie pružnosti | ❌ Nezahájeno | |
 | VIII | Elektrodynamika kontinua | ❌ Nezahájeno | |
-| IX | Statistická fyzika (část 2) | ❌ Nezahájeno | |
+| IX | Statistická fysika (část 2) | ❌ Nezahájeno | |
 | X | Fyzikální kinetika | ❌ Nezahájeno | |
 
 **Legenda:**
